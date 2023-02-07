@@ -4,15 +4,21 @@ import Button from 'react-bootstrap/Button';
 function UserTable(props) {
     function TableBody() {
         if (props.users.length > 0) {
-            return props.users.map((users) => (
-                <tr key={users.id}>
-                    <td>{users.name}</td>
-                    <td>{users.username}</td>
+            return props.users.map((user) => (
+                <tr key={user.id}>
+                    <td>{user.name}</td>
+                    <td>{user.username}</td>
                     <td>
-                        <Button>Edit</Button>
                         <Button
-                            onClick={() => props.DeleteUser(users.id)}
-                        >Delete</Button>
+                            onClick={() => props.EditRow(user)}
+                        >
+                            Edit
+                        </Button>
+                        <Button
+                            onClick={() => props.DeleteUser(user.id)}
+                        >
+                            Delete
+                        </Button>
                     </td>
                 </tr>
             ));
