@@ -10,7 +10,9 @@ function UserTable(props) {
                     <td>{users.username}</td>
                     <td>
                         <Button>Edit</Button>
-                        <Button>Delete</Button>
+                        <Button
+                            onClick={() => props.DeleteUser(users.id)}
+                        >Delete</Button>
                     </td>
                 </tr>
             ));
